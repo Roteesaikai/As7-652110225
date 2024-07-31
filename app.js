@@ -1,17 +1,20 @@
 const express = require('express')
 const app = express()
 
-// console.log("Hello World")
-// console.log("Bye World...")
-
+console.log("Hello World")
+console.log("Bye World...")
+//As2
 app.get('/detail', function(req, res){
-    res.send("Name:Nuttapong Sansing <br/>Login Date:July 30,2017")
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    var txt ="Name:"+ req.query.Name  + "<br/> Login Date:" + req.query.month + " "+ req.query.date + ", " + req.query.year;
+    res.end(txt);
     })
 
 app.listen(9999, function () {
     console.log("Server is running on PORT 9999")
 })
 
+//As1
 // let http = require('http');
 // let url = require('url');
 // http.createServer(function (req, res) 
